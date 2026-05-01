@@ -20,8 +20,8 @@ npm run dev
 
 The hero section uses an HTML5 canvas image-sequence animation.
 
-1. Place your 240 frames in `/public/frames/`
-2. Name them: `frame001.jpg` through `frame240.jpg`
+1. Place your 64 images in `/public/frames/`
+2. Name them: `frame001.jpg` through `frame064.jpg`
 3. Recommended resolution: 1920×1080px or 2560×1440px
 4. Format: JPEG (compressed for performance)
 
