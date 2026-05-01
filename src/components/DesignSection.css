@@ -1,0 +1,111 @@
+.ds {
+  background: var(--c-bg);
+  padding-top: 0;
+}
+
+/* Hero Visual */
+.ds__hero-visual {
+  position: relative;
+  height: clamp(400px, 60vh, 700px);
+  margin-bottom: clamp(60px, 8vw, 100px);
+  overflow: hidden;
+}
+
+.ds__hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0d0d0d 100%);
+}
+
+.ds__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+}
+
+.ds__hero-content {
+  position: absolute;
+  top: 50%;
+  left: var(--s-container);
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.ds__hero-title {
+  margin-top: 16px;
+  color: var(--c-white);
+}
+
+.ds__hero-title em {
+  color: var(--c-gold);
+  font-style: italic;
+}
+
+.ds__car-svg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* Grid */
+.ds__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(32px, 4vw, 60px);
+  margin-bottom: clamp(60px, 8vw, 100px);
+}
+
+.ds__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds__card-label {
+  margin-bottom: 16px;
+  display: block;
+}
+
+.ds__card-title {
+  color: var(--c-white);
+  margin-bottom: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+}
+
+/* Detail visual */
+/* .ds__detail-visual {
+  border: 1px solid var(--c-border);
+} */
+
+.ds__detail-img {
+  width: 100%;
+  height: clamp(250px, 35vw, 450px);
+  overflow: hidden;
+  background: var(--c-bg-2);
+}
+
+.ds__detail-caption {
+  padding: 24px 32px;
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ds__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ds__detail-caption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

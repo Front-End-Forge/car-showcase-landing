@@ -1,0 +1,89 @@
+.int {
+  background: var(--c-bg);
+}
+
+.int__header {
+  margin-bottom: clamp(50px, 7vw, 80px);
+}
+
+.int__title {
+  color: var(--c-white);
+  margin-top: 0;
+}
+
+.int__title em {
+  color: var(--c-gold);
+  font-style: italic;
+}
+
+/* Cockpit visual */
+.int__visual-wrap {
+  width: 100%;
+  margin-bottom: clamp(60px, 8vw, 100px);
+  overflow: hidden;
+  position: relative;
+}
+
+.int__cockpit {
+  width: 100%;
+  height: clamp(300px, 45vw, 600px);
+  background: #080808;
+}
+
+/* Features grid */
+.int__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+}
+
+.int__feature {
+  background: var(--c-bg);
+  padding: clamp(28px, 3.5vw, 50px);
+  display: flex;
+  gap: clamp(20px, 2.5vw, 36px);
+  align-items: flex-start;
+  transition: background var(--t-fast);
+}
+
+.int__feature:hover {
+  background: var(--c-bg-2);
+}
+
+.int__feature-icon {
+  font-size: 1.5rem;
+  color: var(--c-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+.int__feature-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.int__feature-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 300;
+  color: var(--c-white);
+  margin-bottom: 12px;
+}
+
+.int__feature-desc {
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .int__features {
+    grid-template-columns: 1fr;
+  }
+
+  .int__feature {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

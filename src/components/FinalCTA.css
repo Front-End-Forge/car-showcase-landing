@@ -1,0 +1,146 @@
+.cta-section {
+  background: var(--c-bg);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cta__content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding-top: var(--s-section);
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+
+.cta__title {
+  color: var(--c-white);
+  margin-bottom: 28px;
+  font-size: clamp(3.5rem, 9vw, 9rem);
+}
+
+.cta__title em {
+  color: var(--c-gold);
+  font-style: italic;
+}
+
+.cta__body {
+  max-width: 560px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Actions */
+.cta__actions {
+  margin-bottom: 40px;
+}
+
+.cta__btn-main {
+  font-size: clamp(0.65rem, 1.5vw, 0.78rem);
+  padding: clamp(16px, 2vw, 22px) clamp(32px, 4vw, 60px);
+  box-shadow: 0 20px 60px rgba(201,168,76,0.2);
+}
+
+/* Contact */
+.cta__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta__email {
+  color: var(--c-gold);
+  text-decoration: none;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  transition: opacity var(--t-fast);
+}
+
+.cta__email:hover {
+  opacity: 0.7;
+}
+
+/* Footer */
+.cta__footer {
+  border-top: 1px solid var(--c-border);
+  padding: 32px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.cta__footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cta__footer-logo {
+  font-family: var(--f-label);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--c-white);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.cta__footer-gtr {
+  font-size: 0.55rem;
+  color: var(--c-gold);
+  font-weight: 300;
+}
+
+.cta__footer-links {
+  display: flex;
+  gap: clamp(16px, 3vw, 36px);
+  flex-wrap: wrap;
+}
+
+.cta__footer-links a {
+  font-family: var(--f-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-white-40);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.cta__footer-links a:hover {
+  color: var(--c-white);
+}
+
+.cta__footer-copy {
+  color: var(--c-white-20);
+  font-size: 0.65rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta__footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta__footer-links {
+    justify-content: center;
+  }
+}

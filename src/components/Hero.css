@@ -1,0 +1,250 @@
+.hero {
+  /* Tall enough to drive full scroll animation */
+  height: 600vh;
+  position: relative;
+}
+
+.hero__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+/* Canvas */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-canvas);
+  display: block;
+}
+
+/* Gradients */
+.hero__gradient-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--c-bg) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__gradient-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(8, 8, 8, 0.6) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__gradient-sides {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(8, 8, 8, 0.5) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content */
+.hero__content {
+  position: absolute;
+  bottom: 12%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-hero-content);
+  padding: 0 var(--s-container);
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__content--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__eyebrow {
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.hero__title {
+  font-family: var(--f-display);
+  font-weight: 300;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__title-main {
+  font-size: clamp(5rem, 14vw, 13rem);
+  color: var(--c-white);
+  display: block;
+}
+
+.hero__title-sub {
+  font-size: clamp(2rem, 6vw, 6rem);
+  color: var(--c-gold);
+  font-style: italic;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.hero__tagline {
+  font-family: var(--f-label);
+  font-size: clamp(0.85rem, 2vw, 1.2rem);
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  color: var(--c-white-60);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Scroll hint */
+.hero__scroll-hint {
+  position: absolute;
+  right: var(--s-container);
+  bottom: -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--c-gold));
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(0.5);
+    transform-origin: top;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.hero__scroll-hint .label {
+  writing-mode: vertical-rl;
+  color: var(--c-white-40);
+  font-size: 0.6rem;
+}
+
+/* Corner specs */
+.hero__corner-specs {
+  position: absolute;
+  top: 50%;
+  right: var(--s-container);
+  transform: translateY(-50%);
+  z-index: var(--z-hero-content);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.hero__spec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px 0;
+}
+
+.hero__spec-num {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--c-white);
+  line-height: 1;
+}
+
+.hero__spec-unit {
+  color: var(--c-gold);
+  font-size: 0.6rem;
+  margin-top: 4px;
+}
+
+.hero__spec-divider {
+  width: 30px;
+  height: 1px;
+  background: var(--c-border-light);
+  align-self: flex-end;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 768px) {
+  .hero__content {
+    bottom: 18%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__corner-specs {
+    display: none;
+  }
+
+  .hero__scroll-hint {
+    display: none;
+  }
+
+  .hero__title-main {
+    font-size: clamp(4rem, 20vw, 7rem);
+  }
+
+  .hero__title-sub {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 500vh;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero__title-main {
+    font-size: 18rem;
+  }
+
+  .hero__title-sub {
+    font-size: 8rem;
+  }
+}
