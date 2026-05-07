@@ -85,7 +85,7 @@ npm run preview
 
 ---
 
-## 🤝 Support
+## 🤝 Support & Collaboration
 
 If you liked this project, consider giving it a ⭐ on GitHub.
 
