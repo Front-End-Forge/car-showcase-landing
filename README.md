@@ -82,3 +82,18 @@ Each section is a self-contained component. Edit content directly in each `.jsx`
 npm run build
 npm run preview
 ```
+
+---
+
+## 🤝 Support
+
+If you liked this project, consider giving it a ⭐ on GitHub.
+
+For collaborations, freelance work, or feedback:
+
+📧 spriyadharsini41@gmail.com
+
+GitHub:  
+https://github.com/Front-End-Forge
+
+---
