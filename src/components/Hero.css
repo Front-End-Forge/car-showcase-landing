@@ -1,6 +1,6 @@
 .hero {
   /* Tall enough to drive full scroll animation */
-  height: 600vh;
+  height: 300vh;
   position: relative;
 }
 
