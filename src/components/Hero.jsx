@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './Hero.css'
 
-const TOTAL_FRAMES = 240
+const TOTAL_FRAMES = 64
 const PRELOAD_COUNT = 10
 
 export default function Hero() {
